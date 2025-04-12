@@ -4,12 +4,11 @@ class Program {
   static void Main() {
     var tree = new BinaryTree<int>();
     var menu = new Menu(Data.MenuItems);
-    var menuManager = new MenuManager(Data.MenuItems.Length - 1);
-    int menuChoice = -1;
-    menu.OnItemSelected += choice => menuChoice = choice;
-    //while (true) {
-    menu.Show();
-    Console.WriteLine(menuChoice);
-    //}
+    var menuManager = new MenuManager<int>(tree, int.Parse);
+    menu.OnItemSelected += choice => menuManager.MenuChoice(choice);
+    while (true) {
+      Console.Clear();
+      menu.Show();
+    }
   }
 }
