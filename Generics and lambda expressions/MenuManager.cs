@@ -24,6 +24,9 @@ public class MenuManager<T> where T : IComparable<T> {
       ShowTree();
       break;
     case 4:
+      ChangeTreeType();
+      break;
+    case 5:
       Exit();
       break;
     }
@@ -89,6 +92,11 @@ public class MenuManager<T> where T : IComparable<T> {
     }
 
     Console.ReadKey();
+  }
+
+  private void ChangeTreeType() {
+    var treeManager = new TreeManager();
+    treeManager.ChangeTreeType();
   }
 
   private void Exit() => Environment.Exit(0);
