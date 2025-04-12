@@ -139,6 +139,16 @@ public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T> {
 
     public void Dispose() { }
 
+    public static BinaryTreeIterator operator ++(BinaryTreeIterator current) {
+      current.MoveNext();
+      return current;
+    }
+
+    public static BinaryTreeIterator operator --(BinaryTreeIterator current) {
+      current.MovePrevious();
+      return current;
+    }
+    
     public bool MoveNext() {
       if (_root == null) return false;
 
