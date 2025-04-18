@@ -29,5 +29,4 @@ public class TreeManager {
   private void FloatTreeLoop() => TreeLoop(float.Parse);
 
   private void StringTreeLoop() => TreeLoop(input => input);
-
 }

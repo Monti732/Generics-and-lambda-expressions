@@ -74,12 +74,12 @@ public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T> {
   }
 
   public void Remove(T value) => _root = RemoveNode(_root, value);
-
-
+  
   private Node RemoveNode(Node current, T value) {
-    if (current == null) return null;
-
-
+    if (current == null) {
+      return null;
+    }
+    
     int compareResult = value.CompareTo(current.Value);
 
     if (compareResult < 0) {
@@ -150,7 +150,9 @@ public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T> {
     }
     
     public bool MoveNext() {
-      if (_root == null) return false;
+      if (_root == null) {
+        return false;
+      }
 
       if (!_isStarted) {
         _current = _root;
@@ -164,7 +166,9 @@ public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T> {
     }
 
     public bool MovePrevious() {
-      if (_root == null) return false;
+      if (_root == null) {
+        return false;
+      }
 
       if (!_isStarted) {
         _current = _root;
@@ -178,7 +182,9 @@ public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T> {
     }
 
     public Node Next(Node xNode) {
-      if (xNode == null) return null;
+      if (xNode == null) {
+        return null;
+      }
 
       if (xNode.Right != null) {
         Node yNode = xNode.Right;
