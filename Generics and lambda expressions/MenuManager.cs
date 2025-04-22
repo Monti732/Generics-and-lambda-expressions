@@ -21,12 +21,15 @@ public class MenuManager<T> where T : IComparable<T> {
       Contains();
       break;
     case 3:
-      ShowTree();
+      TraversalInOrder();
       break;
     case 4:
-      ChangeTreeType();
+      ReverseTraversal();
       break;
     case 5:
+      ChangeTreeType();
+      break;
+    case 6:
       Exit();
       break;
     }
@@ -86,8 +89,16 @@ public class MenuManager<T> where T : IComparable<T> {
     Console.ReadKey();
   }
 
-  private void ShowTree() {
+  private void TraversalInOrder() {
     foreach (var item in _tree.InOrderTraversal()) {
+      Console.Write($"{item} ");
+    }
+
+    Console.ReadKey();
+  }
+
+  private void ReverseTraversal() {
+    foreach (var item in _tree.InOrderTraversal().Reverse()) {
       Console.Write($"{item} ");
     }
 

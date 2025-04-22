@@ -2,7 +2,8 @@
 
 public struct Data {
   public static string[] MenuItems = [
-    "Add Node to Tree", "Remove Node from Tree", "Find Node with certain value", "Show Tree", "Change the type of tree",
+    "Add Node to Tree", "Remove Node from Tree", "Find Node with certain value", "Traversal in order",
+    "Traversal pre order", "Change the type of tree",
     "Exit"
   ];
 
